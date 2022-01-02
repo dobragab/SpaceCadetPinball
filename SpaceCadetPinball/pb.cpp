@@ -30,6 +30,7 @@ int pb::time_ticks = 0, pb::demo_mode = 0, pb::game_mode = 2, pb::state, pb::fra
 float pb::time_now, pb::time_next, pb::ball_speed_limit, pb::mode_countdown_, pb::time_ticks_remainder = 0;
 high_score_struct pb::highscore_table[5];
 bool pb::FullTiltMode = false, pb::cheat_mode = false;
+bool pb::FullTiltRules = false;
 
 
 int pb::init()

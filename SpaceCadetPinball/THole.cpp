@@ -84,7 +84,7 @@ void THole::Collision(TBall* ball, vector_type* nextPosition, vector_type* direc
 		ball->Acceleration.Z = 0.0;
 
 		// Ramp hole has no delay in FT.
-		auto captureTime = pb::FullTiltMode ? 0 : 0.5f;
+		auto captureTime = pb::FullTiltRules ? 0 : 0.5f;
 		Timer = timer::set(captureTime, this, TimerExpired);
 
 		if (!PinballTable->TiltLockFlag)

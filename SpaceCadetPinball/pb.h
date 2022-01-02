@@ -16,6 +16,7 @@ public:
 	static TPinballTable* MainTable;
 	static high_score_struct highscore_table[5];
 	static bool FullTiltMode;
+	static bool FullTiltRules;
 
 	static int init();
 	static int uninit();
