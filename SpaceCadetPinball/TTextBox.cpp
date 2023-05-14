@@ -205,6 +205,7 @@ void TTextBox::Draw(bool redraw)
 
 	if (display)
 	{
+		bool centered = pb::FullTiltRules;
 		if (!Font)
 		{
 			gdrv::blit(
@@ -221,7 +222,7 @@ void TTextBox::Draw(bool redraw)
 				render::vscreen.YPosition + OffsetY,
 				Width,
 				Height,
-				pb::FullTiltMode);
+				centered);
 			return;
 		}
 
@@ -240,13 +241,13 @@ void TTextBox::Draw(bool redraw)
 
 		// Textboxes in FT display texts centered
 		auto offY = OffsetY;
-		if (pb::FullTiltMode)
+		if (centered)
 			offY += (Height - textHeight) / 2;
 		for (auto i = 0; i < lineCount; i++)
 		{
 			auto line = lines[i];
 			auto offX = OffsetX;
-			if (pb::FullTiltMode)
+			if (centered)
 				offX += (Width - line.Width) / 2;
 			for (auto text = line.Start; text < line.End; text++)
 			{
